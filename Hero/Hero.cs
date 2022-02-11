@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Assignment_1_RPG_Characters.Items;
+using RPGCharacters.Items;
 
-namespace Assignment_1_RPG_Characters
+namespace RPGCharacters
 {
     /// <summary>
     /// Base class for heroes
@@ -60,7 +60,7 @@ namespace Assignment_1_RPG_Characters
         }
         public void EquipArmor(int slot, Item itemToEquip)
         {
-            if(slot > 0 && slot <= Equipment.MaxSlots)
+            if(slot > 0 && slot <= Equipment.slots)
                 Equipment.AddToGearSlot(slot, itemToEquip);
         }
     }

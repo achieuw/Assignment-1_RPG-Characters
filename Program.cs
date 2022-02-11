@@ -1,4 +1,5 @@
 ﻿using System;
+
 /// <summary>
 /// a) Various character classes having attributes which increase at different rates as the character gains levels.
 /// b) Equipment, such as armor and weapons, that characters can equip. The equipped items will alter the power of
@@ -11,7 +12,7 @@
 /// in a test-driven development manner.
 /// </summary>
 
-namespace Assignment_1_RPG_Characters
+namespace RPGCharacters
 {
     internal class Program
     {

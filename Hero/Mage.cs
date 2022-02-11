@@ -1,8 +1,8 @@
-﻿using Assignment_1_RPG_Characters.Items;
+﻿using RPGCharacters.Items;
 using System;
 using System.Collections.Generic;
 
-namespace Assignment_1_RPG_Characters
+namespace RPGCharacters
 {
     class Mage : Hero
     {

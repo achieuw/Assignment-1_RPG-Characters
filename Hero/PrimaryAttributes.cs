@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_1_RPG_Characters
+namespace RPGCharacters
 {
     /// <summary>
     /// Primary base attributes with properties: Strength, Dexterity, Intelligence. Defaults value to 1.

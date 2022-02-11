@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Assignment_1_RPG_Characters.Items
+namespace RPGCharacters.Items
 {
-    class Weapon : Item
+    public class Weapon : Item
     {
         public override int RequiredLevel { get; set; }
         public override int Slot { get; set; }

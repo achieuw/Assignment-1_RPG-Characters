@@ -2,28 +2,32 @@
 using System.Collections.Generic;
 
 
-namespace Assignment_1_RPG_Characters.Items
+namespace RPGCharacters.Items
 {
-    class Equipment
+    public class Equipment
     {
-        public Dictionary<int, Item> GearSlots;
+        private Dictionary<int, Item> Gear = new();
 
-        public readonly int MaxSlots = 4;
+        public readonly int slots = 4;
 
         public Equipment()
         {
-            GearSlots = new();
-
-            // Add slots for the gear and default items to null
-            for (int i = 1; i <= MaxSlots; i++)
+            //InitializeGearSlots(slots);
+        }
+        public void InitializeGearSlots(int size)
+        {
+            for (int i = 1; i <= size; i++)
             {
-                GearSlots.Add(i, null);
+                Gear.Add(i, null);
             }
         }
-
+        public int GetEquipmentSize()
+        {
+            return Gear.Count;
+        }
         public void AddToGearSlot(int slot, Item item)
         {
-            GearSlots.Add(slot, item);
+            Gear.Add(slot, item);
         }
     }
 }
