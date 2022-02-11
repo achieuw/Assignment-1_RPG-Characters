@@ -17,8 +17,66 @@ namespace Assignment_1_RPG_Characters
     {
         static void Main(string[] args)
         {
-            Mage mage = new Mage("Achieuw");
-            Console.WriteLine($"Name: {mage.Name} Level: {mage.Level}");
+            #region Fake loading
+            //int count = 0;
+            //while (count < 3)
+            //{
+            //    switch (count)
+            //    {
+            //        case 0:
+            //            Console.WriteLine("Fetching all the promises...");
+            //            break;
+            //        case 1:
+            //            Console.WriteLine("Declaring variables with actual types...");
+            //            break;
+            //        case 2:
+            //            Console.WriteLine("Misspelling a varibael name 42 times...");
+            //            break;
+            //    }
+            //    for (int i = 0; i < 800000000; i++)
+            //    {
+            //    }
+
+            //    count++;
+            //}
+            #endregion
+            #region Welcome message
+            Console.Clear();
+            Console.WriteLine("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+            Console.WriteLine("|                                                   |");
+            Console.WriteLine("| Welcome to World of Equipping an Item which exist |");
+            Console.WriteLine("|                                                   |");
+            Console.WriteLine("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+            #endregion
+            #region Initialize class
+            Console.WriteLine("Choose your class: ");
+            Console.WriteLine("1: Mage ");
+            Console.WriteLine("2: Warrior ");
+            Console.WriteLine("3: Ranger ");
+            Console.WriteLine("4: Rogue ");
+            int type = int.Parse(Console.ReadLine());
+            Console.Write("Choose a name: ");
+            string name = Console.ReadLine().ToString().ToLower();
+            #endregion
+
+            // Somehow instantiate a base class that can be inherited by specific class in switch statement?
+            Mage mage = new Mage(name);
+
+            switch (type)
+            {
+                case 1:
+                    Console.WriteLine("Choose a weapon: ");
+                    Console.WriteLine("1: Wand");
+                    Console.WriteLine("2: Staff");
+                    int weaponType = int.Parse(Console.ReadLine());
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
         }
     }
 }
