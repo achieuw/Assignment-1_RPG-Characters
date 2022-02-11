@@ -1,33 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assignment_1_RPG_Characters.Items;
 
 namespace Assignment_1_RPG_Characters
 {
-    class Hero : BaseHero
+    /// <summary>
+    /// Base class for heroes
+    /// </summary>
+    abstract class Hero
     {
-        public override string Name { get; set; }
-        public override int Level { get; set ; }
-        public struct PrimaryStats
+        /// <summary>
+        /// Instantiates a new unarmed hero with default stats
+        /// </summary>
+        /// <param name="name"></param>
+        public Hero(string name)
         {
-            public static int strength = 1;
-            public static int intelligence = 1;
-            public static int dexterity = 1;
-        }
-        public Hero()
-        {
+            Name = name;
             Level = 1;
+            BaseStats = new(1, 1 ,1);
+            StatIncreaseOnLevelUp = new(1, 1, 1);
+            Equipment = new();
+            Weapon = new(Weapon.Types.Unarmed);
+            WeaponProficiencies = new();
+            WeaponProficiencies.Add(Weapon.Types.Unarmed);
         }
-        public override void DealDamage()
+
+        #region Fields
+        public string Name { get; set; }
+        public int Level { get; set; }
+        public PrimaryAttributes BaseStats { get; set; }
+        public PrimaryAttributes StatIncreaseOnLevelUp { get; set; }
+        public Equipment Equipment { get; set; }
+        public Weapon Weapon { get; set; }
+        public abstract List<Weapon.Types> WeaponProficiencies { get; set; }
+
+        // Armor
+        // Armor proficiencies
+        #endregion
+
+        /// <summary>
+        /// Deal damage based on equipped weapon and primary attribute (Weapon DPS * (1 + primarystat / 100))
+        /// </summary>
+        /// <param name="primaryStat">Stat to use for calculating total DPS</param>
+        /// <returns>Total DPS</returns>
+        public abstract int DealDamage();
+
+        /// <summary>
+        /// Increase hero level and primary attributes
+        /// </summary>
+        public virtual void LevelUp()
         {
-
+            Level++;
+            // Operator overloading
+            BaseStats += StatIncreaseOnLevelUp;
         }
-        public override void LevelUp()
+        public void EquipWeapon(Item itemToEquip)
         {
-
+            Equipment.AddToGearSlot(1, itemToEquip);
         }
-
+        public void EquipArmor(int slot, Item itemToEquip)
+        {
+            if(slot > 0 && slot <= Equipment.MaxSlots)
+                Equipment.AddToGearSlot(slot, itemToEquip);
+        }
     }
 }
