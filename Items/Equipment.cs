@@ -12,7 +12,7 @@ namespace RPGCharacters.Items
 
         public Equipment()
         {
-            //InitializeGearSlots(slots);
+            InitializeGearSlots(slots);
         }
         public void InitializeGearSlots(int size)
         {
