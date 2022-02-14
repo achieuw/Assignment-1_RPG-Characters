@@ -25,9 +25,13 @@ namespace RPGCharacters.Items
         {
             return Gear.Count;
         }
-        public void AddToGearSlot(int slot, Item item)
+        public Item GetEquipmentInSlot(int slot)
         {
-            Gear.Add(slot, item);
+            return Gear[slot];
+        }
+        public void EquipItem(int slot, Item item)
+        {
+            Gear[slot] = item;
         }
     }
 }
