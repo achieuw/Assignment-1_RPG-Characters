@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace RPGCharacters
 {
-    class Mage : Hero
+    public class Mage : Hero
     {
         public override List<Weapon.Types> WeaponProficiencies { get; set; }
         // Armor proficiencies

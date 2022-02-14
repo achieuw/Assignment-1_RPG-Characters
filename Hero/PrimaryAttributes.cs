@@ -9,7 +9,7 @@ namespace RPGCharacters
     /// <summary>
     /// Primary base attributes with properties: Strength, Dexterity, Intelligence. Defaults value to 1.
     /// </summary>
-    class PrimaryAttributes
+    public class PrimaryAttributes
     {
         public int Strength { get; set; }
         public int Dexterity { get; set; }

@@ -7,7 +7,7 @@ namespace RPGCharacters
     /// <summary>
     /// Base class for heroes
     /// </summary>
-    abstract class Hero
+    public abstract class Hero
     {
         /// <summary>
         /// Instantiates a new unarmed hero with default stats
@@ -16,8 +16,12 @@ namespace RPGCharacters
         public Hero(string name)
         {
             Name = name;
+            InitializeHero();
+        }
+        public void InitializeHero()
+        {
             Level = 1;
-            BaseStats = new(1, 1 ,1);
+            BaseStats = new(1, 1, 1);
             StatIncreaseOnLevelUp = new(1, 1, 1);
             Equipment = new();
             Weapon = new(Weapon.Types.Unarmed);
@@ -54,14 +58,33 @@ namespace RPGCharacters
             // Operator overloading
             BaseStats += StatIncreaseOnLevelUp;
         }
-        public void EquipWeapon(Item itemToEquip)
+        /// <summary>
+        /// Checks requirements to equip a weapon in the first slot 
+        /// </summary>
+        /// <param name="itemToEquip"></param>
+        /// <returns>The weapon that is equipped</returns>
+        public Weapon EquipWeapon(Weapon weaponToEquip)
         {
-            Equipment.AddToGearSlot(1, itemToEquip);
+            // Check requirements to equip weapon
+            if(Level >= weaponToEquip.RequiredLevel)
+            {
+                // Check if hero class can use this weapon
+                foreach (Weapon.Types type in WeaponProficiencies)
+                {
+                    if(type == weaponToEquip.Type)
+                    {
+                        Equipment.EquipItem(1, weaponToEquip);
+                        return weaponToEquip;
+                    }
+                }
+            }
+
+            throw new WeaponException("Invalid weapon. Could not be equipped.");
         }
         public void EquipArmor(int slot, Item itemToEquip)
         {
-            if(slot > 0 && slot <= Equipment.slots)
-                Equipment.AddToGearSlot(slot, itemToEquip);
+            if (slot > 0 && slot <= Equipment.slots)
+                Equipment.EquipItem(slot, itemToEquip);
         }
     }
 }
