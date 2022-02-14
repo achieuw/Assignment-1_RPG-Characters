@@ -28,6 +28,7 @@ namespace RPGCharacters.Items
         {
             RequiredLevel = 1;
             Slot = 1;
+            Type = type;
             switch (type)
             {                
                 case Types.Axe:
