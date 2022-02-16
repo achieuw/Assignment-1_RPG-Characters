@@ -3,3 +3,7 @@ Assignment 1 of Noroff .Net acceleration course. Assignment includes RPG charact
 
 ## Project
 This Project is not runnable and only provides a template for testing purposes.
+
+### Usage
+* Clone the repo at https://github.com/achieuw/Assignment-1_RPG-Characters/
+* Open solution file with Visual Studio 2019
