@@ -1,5 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-
 # RPG Characters
 Assignment 1 of Noroff .Net acceleration course. Assignment includes RPG character classes and item classes developed with OOP. The classes are tested with test cases created with XUnit.
 
