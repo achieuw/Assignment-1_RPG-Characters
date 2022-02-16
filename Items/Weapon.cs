@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RPGCharacters.Items
+﻿namespace RPGCharacters.Items
 {
     public class Weapon : Item
     {
@@ -12,8 +10,9 @@ namespace RPGCharacters.Items
         private double Damage { get; set; }
         // Calculate DPS with attackspeed defined as seconds between attacks
         public double DPS { get => AttackSpeed * Damage; }
-        
-        public enum Types {
+
+        public enum Types
+        {
             Unarmed,
             Axe,
             Bow,
