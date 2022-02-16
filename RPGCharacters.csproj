@@ -6,4 +6,10 @@
     <RootNamespace>RPGCharacters</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ApplicationTests\**" />
+    <EmbeddedResource Remove="ApplicationTests\**" />
+    <None Remove="ApplicationTests\**" />
+  </ItemGroup>
+
 </Project>
