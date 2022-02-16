@@ -5,5 +5,3 @@ Assignment 1 of Noroff .Net acceleration course. Assignment includes RPG charact
 
 ## Project
 This Project is not runnable and only provides a template for testing purposes.
-
-
