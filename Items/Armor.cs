@@ -1,15 +1,30 @@
 ﻿using System;
 
-
 namespace RPGCharacters.Items
 {
-    class Armor
+    public class Armor : Item
     {
-        public PrimaryAttributes Stats { get; set; }
+        public override string Name { get; set; }
+        public override int RequiredLevel { get; set; }
+        public override Slot ItemSlot { get; set; }
+        public PrimaryAttributes Stats;
+        public Types Type { get; set; }
 
-        public Armor()
+        public enum Types
         {
-            Stats = new PrimaryAttributes(0, 0, 0);
+            Cloth,
+            Leather,
+            Mail,
+            Plate
+        }
+
+        public Armor(string name, int requiredLevel, Types type, PrimaryAttributes stats, Slot slot)
+        {
+            Name = name;
+            RequiredLevel = requiredLevel;
+            Type = type;
+            ItemSlot = slot;
+            Stats = stats;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using RPGCharacters.Items;
 
 /// <summary>
 /// a) Various character classes having attributes which increase at different rates as the character gains levels.
@@ -78,6 +79,8 @@ namespace RPGCharacters
                 case 4:
                     break;
             }
+
+            
         }
     }
 }

@@ -6,13 +6,13 @@ namespace RPGCharacters.Items
 {
     public class Equipment
     {
-        private Dictionary<int, Item> Gear = new();
-
-        public readonly int slots = 4;
+        public Dictionary<int, Armor> Gear = new();
+        private readonly int slots = 4;
+        public int Slots { get => slots; }
 
         public Equipment()
         {
-            InitializeGearSlots(slots);
+            InitializeGearSlots(Slots);
         }
         public void InitializeGearSlots(int size)
         {
@@ -29,7 +29,7 @@ namespace RPGCharacters.Items
         {
             return Gear[slot];
         }
-        public void EquipItem(int slot, Item item)
+        public void EquipItem(int slot, Armor item)
         {
             Gear[slot] = item;
         }

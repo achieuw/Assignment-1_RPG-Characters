@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RPGCharacters
+﻿namespace RPGCharacters
 {
     /// <summary>
     /// Primary base attributes with properties: Strength, Dexterity, Intelligence. Defaults value to 1.
@@ -20,6 +14,12 @@ namespace RPGCharacters
             Strength = strength;
             Dexterity = dexterity;
             Intelligence = intelligence;
+        }
+        public PrimaryAttributes()
+        {
+            Strength = 1;
+            Dexterity = 1;
+            Intelligence = 1;
         }
 
         /// <summary>
